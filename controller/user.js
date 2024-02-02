@@ -57,10 +57,21 @@ const registerController = async (req, res) => {
       });
 
       const mailOptions = {
-        from: "Auth client webdev warriors",
+        from: "Food Hunt <rakibulanas777@gmail.com>",
         to: req.body.email,
-        subject: "Otp for email verification",
-        text: `Your verify otp is ${otp}`,
+        subject: "OTP for Email Verification",
+        html: `
+    <p>Hello,</p>
+    <p>Thank you for registering with Food Hunt. To complete your email verification, please use the following One-Time Password (OTP):</p>
+    <p style="font-size: 24px; color: #007bff;"><strong>${otp}</strong></p>
+    
+    <p>This OTP is valid for the next 15 minutes. If you didn't request this verification, please ignore this email.</p>
+    
+    <p>Best regards,</p>
+    <p>The WavLyric Team</p>
+    
+    <p style="font-style: italic; color: #888;">Note: This is an automated email. Please do not reply.</p>
+  `,
       };
 
       transporter.sendMail(mailOptions, (error, info) => {
