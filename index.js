@@ -12,7 +12,7 @@ const cors = require("cors");
 app.use(express.json());
 
 dotenv.config();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 8001;
 app.use(cors());
 
 app.get("/", (req, res) => {

@@ -1,4 +1,4 @@
-const cloudinary = require("cloudinary");
+const cloudinary = require("cloudinary").v2;
 
 cloudinary.config({
   cloud_name: "dvge54a7y",
@@ -14,7 +14,7 @@ const imageUploadController = async (req, res) => {
       public_id: result.public_id,
     });
   } catch (error) {
-    throw error;
+    console.log(error);
   }
 };
 
